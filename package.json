@@ -4,7 +4,9 @@
   "description": "Smart Cashless Self-Service Carwash System",
   "type": "module",
   "main": "src/server.js",
-  "engines": { "node": ">=18.17" },
+  "engines": {
+    "node": ">=18.17"
+  },
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js"
@@ -21,6 +23,7 @@
     "helmet": "^7.1.0",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
-    "pg": "^8.12.0"
+    "pg": "^8.12.0",
+    "qrcode": "^1.5.4"
   }
 }

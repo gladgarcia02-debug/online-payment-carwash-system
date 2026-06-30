@@ -82,9 +82,13 @@ h1 { color: var(--blue-dark); }
   background: var(--blue-dark); border-radius: 14px;
   padding: 1.5rem 1rem; margin: 1.5rem 0;
 }
+.token-qr {
+  display: block; width: 180px; height: 180px;
+  margin: 0 auto .75rem; border-radius: 8px; background: #fff;
+}
 .token-code {
   display: block; font-family: "Courier New", monospace;
-  font-size: .85rem; color: #fff; word-break: break-all;
-  letter-spacing: .05em;
+  font-size: .7rem; color: #cfe0f7; word-break: break-all;
+  letter-spacing: .03em;
 }
 .expires-note { font-size: .85rem; margin: .75rem 0 1.5rem; }

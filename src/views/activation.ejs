@@ -9,9 +9,10 @@
 <body>
   <main class="container">
     <h1>Payment confirmed!</h1>
-    <p class="muted">Show or scan this code at the machine to start.</p>
+    <p class="muted">Scan this code at the machine to start.</p>
 
     <div class="token-box">
+      <img class="token-qr" src="<%= qrCodeDataUrl %>" alt="Activation QR code" />
       <span class="token-code"><%= token.token %></span>
     </div>
 

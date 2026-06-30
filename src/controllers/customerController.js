@@ -2,6 +2,7 @@ import { asyncHandler } from '../utils/asyncHandler.js';
 import { getAvailableMachine } from '../services/machineService.js';
 import { listServicesWithPricing, getServiceWithPricing } from '../services/catalogService.js';
 import { createTransaction, getTransactionView, payTransaction } from '../services/transactionService.js';
+import { generateQrDataUrl } from '../utils/qrcode.js';
 import { ApiError } from '../utils/ApiError.js';
 
 export const renderBay = asyncHandler(async (req, res) => {
@@ -45,5 +46,6 @@ export const payCheckout = asyncHandler(async (req, res) => {
 export const renderDone = asyncHandler(async (req, res) => {
   const { transaction, token } = await getTransactionView(req.params.id);
   if (!token) throw ApiError.conflict('No activation token has been issued for this order yet.');
-  res.render('activation', { title: 'Your activation code', transaction, token });
+  const qrCodeDataUrl = await generateQrDataUrl(token.token);
+  res.render('activation', { title: 'Your activation code', transaction, token, qrCodeDataUrl });
 });
