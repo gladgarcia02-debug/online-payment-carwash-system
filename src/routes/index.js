@@ -1,9 +1,11 @@
 import { Router } from 'express';
 import healthRoutes from './healthRoutes.js';
+import customerRoutes from './customerRoutes.js';
 
 const router = Router();
 
 router.use('/health', healthRoutes);
+router.use('/', customerRoutes);
 
 // Feature routers mount here as they are built. Note: ESP32 will eventually
 // consume the same /api endpoints, so design them transport-agnostic.

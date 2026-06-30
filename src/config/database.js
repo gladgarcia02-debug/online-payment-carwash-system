@@ -16,3 +16,18 @@ export const verifyConnection = async () => {
   const { rows } = await pool.query('SELECT NOW() AS now');
   return rows[0].now;
 };
+
+export const withTransaction = async (fn) => {
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+    const result = await fn(client);
+    await client.query('COMMIT');
+    return result;
+  } catch (err) {
+    await client.query('ROLLBACK');
+    throw err;
+  } finally {
+    client.release();
+  }
+};

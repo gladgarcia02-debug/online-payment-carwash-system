@@ -30,3 +30,61 @@ h1 { color: var(--blue-dark); }
   border-radius: 10px;
 }
 .btn:hover { background: var(--blue-dark); }
+.btn.pay-btn { width: 100%; padding: 1rem; font-size: 1.05rem; border: none; cursor: pointer; border-radius: 10px; }
+
+/* ---- bay label / section label ---- */
+.bay-label    { font-size: .85rem; margin-bottom: .25rem; }
+.section-label { font-weight: 600; margin: 1.5rem 0 .5rem; color: var(--text); }
+.back-link    { display: inline-block; margin-bottom: 1rem; color: var(--blue); text-decoration: none; font-size: .9rem; }
+.back-link:hover { text-decoration: underline; }
+
+/* ---- service cards (scan-bay) ---- */
+.card-list { display: flex; flex-direction: column; gap: .75rem; margin-top: 1.5rem; }
+.card {
+  display: flex; align-items: center;
+  padding: 1rem 1.25rem;
+  background: #fff; border: 1px solid #d0e0f5;
+  border-radius: 12px; text-decoration: none; color: var(--text);
+  transition: box-shadow .15s;
+}
+.card:hover { box-shadow: 0 2px 12px rgba(21,101,192,.15); }
+.card-name  { font-weight: 600; font-size: 1.05rem; flex: 1; text-align: left; }
+.card-desc  { font-size: .85rem; color: var(--muted); flex: 2; text-align: left; padding: 0 .75rem; }
+.card-arrow { font-size: 1.5rem; color: var(--blue); }
+
+/* ---- duration options (scan-service) ---- */
+.option-list { display: flex; flex-direction: column; gap: .6rem; margin-top: .5rem; }
+.option-btn {
+  display: flex; justify-content: space-between; align-items: center;
+  width: 100%; padding: .85rem 1.25rem;
+  background: #fff; border: 1px solid #d0e0f5;
+  border-radius: 12px; cursor: pointer; color: var(--text);
+  font-size: 1rem; transition: box-shadow .15s;
+}
+.option-btn:hover { box-shadow: 0 2px 12px rgba(21,101,192,.15); }
+.option-duration { font-weight: 600; }
+.option-price    { color: var(--blue-dark); font-weight: 700; font-size: 1.05rem; }
+
+/* ---- order summary box ---- */
+.summary-box {
+  background: #fff; border: 1px solid #d0e0f5;
+  border-radius: 12px; padding: 1rem 1.25rem;
+  text-align: left; margin: 1.5rem 0;
+}
+.summary-row { display: flex; justify-content: space-between; padding: .4rem 0; font-size: .95rem; }
+.summary-row + .summary-row { border-top: 1px solid #edf2fb; }
+.summary-label { color: var(--muted); }
+.summary-total { font-weight: 700; font-size: 1.1rem; }
+.summary-total .summary-label { color: var(--text); }
+
+/* ---- activation token display ---- */
+.token-box {
+  background: var(--blue-dark); border-radius: 14px;
+  padding: 1.5rem 1rem; margin: 1.5rem 0;
+}
+.token-code {
+  display: block; font-family: "Courier New", monospace;
+  font-size: .85rem; color: #fff; word-break: break-all;
+  letter-spacing: .05em;
+}
+.expires-note { font-size: .85rem; margin: .75rem 0 1.5rem; }

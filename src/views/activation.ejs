@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Payment confirmed!</h1>
+    <p class="muted">Show or scan this code at the machine to start.</p>
+
+    <div class="token-box">
+      <span class="token-code"><%= token.token %></span>
+    </div>
+
+    <div class="summary-box" style="margin-top:1.5rem;">
+      <div class="summary-row">
+        <span class="summary-label">Bay</span>
+        <span><%= transaction.machine_name %></span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-label">Service</span>
+        <span><%= transaction.service_name %></span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-label">Duration</span>
+        <span><%= transaction.duration_minutes %> min</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-label">Paid</span>
+        <span><%= transaction.currency %> <%= Number(transaction.amount).toFixed(2) %></span>
+      </div>
+    </div>
+
+    <p class="muted expires-note">
+      Code expires at <strong><%= new Date(token.expires_at).toLocaleTimeString() %></strong>
+      &mdash; valid for <%= Math.round((new Date(token.expires_at) - Date.now()) / 60000) %> min.
+    </p>
+
+    <a class="btn" href="/scan/<%= transaction.machine_code %>">Start another wash</a>
+  </main>
+  <script src="/js/main.js"></script>
+</body>
+</html>

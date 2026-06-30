@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Confirm &amp; Pay</h1>
+
+    <div class="summary-box">
+      <div class="summary-row">
+        <span class="summary-label">Bay</span>
+        <span><%= transaction.machine_name %></span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-label">Service</span>
+        <span><%= transaction.service_name %></span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-label">Duration</span>
+        <span><%= transaction.duration_minutes %> min</span>
+      </div>
+      <div class="summary-row summary-total">
+        <span class="summary-label">Total</span>
+        <span><%= transaction.currency %> <%= Number(transaction.amount).toFixed(2) %></span>
+      </div>
+    </div>
+
+    <form method="POST" action="/checkout/<%= transaction.id %>/pay">
+      <button type="submit" class="btn pay-btn">Pay with GCash (simulated)</button>
+    </form>
+
+    <a class="back-link" href="/scan/<%= transaction.machine_code %>">&#8592; Change selection</a>
+  </main>
+</body>
+</html>

@@ -54,7 +54,7 @@ routes never contain either. This keeps each layer independently testable.
 
 ## Roadmap
 - [x] Scaffold + database schema
-- [ ] Customer flow: QR -> service -> duration -> price -> simulated payment -> token
+- [x] Customer flow: QR -> service -> duration -> price -> simulated payment -> token
 - [ ] Machine simulation (idle -> running -> finished via timers)
 - [ ] Admin auth + dashboard (revenue, transactions, machines, logs, pricing)
 - [ ] Reports & analytics
