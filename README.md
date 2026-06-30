@@ -41,7 +41,7 @@ routes never contain either. This keeps each layer independently testable.
 3. Load the schema into Neon:
    `psql "$DATABASE_URL" -f database/schema.sql`
 4. `npm run dev` (auto-restart) or `npm start`.
-5. Visit `http://localhost:3000` and `http://localhost:3000/health`.
+5. Visit `http://localhost:3000` and `http://localhost:3000/health`. To Run the UI for choosing the services `http://localhost:3000/scan/BAY-001`
 
 ## Notes
 - **Customers are anonymous in the MVP** — no login. Optional `customer_reference`
